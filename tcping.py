@@ -18,6 +18,7 @@ def check_port(ip, port):
 
 
 if __name__ == "__main__":
+  try:
     ip = sys.argv[1]
     port = sys.argv[2]
     i = 0
@@ -31,3 +32,6 @@ if __name__ == "__main__":
         else:
             print("Connect to %s[%s] seq=%d is timeout." % (ip, port, i))
         time.sleep(1)
+  except KeyboardInterrupt:
+    print("\nBye!")
+    sys.exit(0)
